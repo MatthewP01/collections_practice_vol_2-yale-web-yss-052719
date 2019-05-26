@@ -51,10 +51,23 @@ def find_cool(array)
   end
 end
 
-def organize_schools(array)
-  array.each do |place, loc|
-    loc.each do |key, value|
+# def organize_schools(array)
+#   array.each do |place, loc|
+#     loc.each do |key, value|
+#     end
+#   end
+#
+# end
+def organize_schools(schools)
+  output = {}
+  schools.each do |key, location_hash|
+    location_hash.each do |k, location|
+      if !output.has_key?(location)
+        output[location] = [key]
+      elsif output.has_key?(location)
+        output[location] << key
+      end
     end
   end
-
+  output
 end
