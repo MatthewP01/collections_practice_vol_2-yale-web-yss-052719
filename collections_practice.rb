@@ -65,7 +65,6 @@ def organize_schools(array)
       if !school_hash.include?(place)
         school_hash[place] = [key]
       else 
-      #school_hash.has_key?(place)
         school_hash[place] << key
       end
     end
