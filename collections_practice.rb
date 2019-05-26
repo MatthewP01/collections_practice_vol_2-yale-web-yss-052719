@@ -63,11 +63,11 @@ def organize_schools(array)
   array.each do |key, location_hash|
     location_hash.each do |k, location|
       if !output.has_key?(location)
-        output[location] = [key]
+        school_hash[location] = [key]
       elsif output.has_key?(location)
-        output[location] << key
+        school_hash[location] << key
       end
     end
   end
-  output
+  return school_hash
 end
