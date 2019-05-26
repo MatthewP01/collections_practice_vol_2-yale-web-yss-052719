@@ -58,16 +58,29 @@ end
 #   end
 #
 # end
-def organize_schools(array)
-  school_hash = {}
-  array.each do |key, value|
-    value.each do |key2, place|
-      if school_hash.has_key?(place)
-        school_hash[place] = key
-      elsif school_hash.has_key?(place)
-        school_hash[place] << key
+# def organize_schools(array)
+#   school_hash = {}
+#   array.each do |key, value|
+#     value.each do |key2, place|
+#       if school_hash.has_key?(place)
+#         school_hash[place] = key
+#       elsif school_hash.has_key?(place)
+#         school_hash[place] << key
+#       end
+#     end
+#   end
+#   return school_hash
+# end
+def organize_schools(schools)
+  output = {}
+  schools.each do |key, location_hash|
+    location_hash.each do |k, location|
+      if !output.has_key?(location)
+        output[location] = [key]
+      elsif output.has_key?(location)
+        output[location] << key
       end
     end
   end
-  return school_hash
+  output
 end
