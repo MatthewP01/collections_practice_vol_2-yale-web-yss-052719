@@ -75,7 +75,7 @@ def organize_schools(schools)
   output = {}
   schools.each do |key, location_hash|
     location_hash.each do |k, location|
-      if !output.has_key?(location)
+      if !output.include?(location)
         output[location] = [key]
       elsif output.has_key?(location)
         output[location] << key
