@@ -64,7 +64,8 @@ def organize_schools(array)
     value.each do |key2, place|
       if !school_hash.include?(place)
         school_hash[place] = [key]
-      elsif school_hash.has_key?(place)
+      else 
+      #school_hash.has_key?(place)
         school_hash[place] << key
       end
     end
