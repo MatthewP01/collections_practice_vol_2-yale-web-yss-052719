@@ -60,7 +60,7 @@ end
 # end
 def organize_schools(array)
   school_hash = {}
-  array.each do |key, location_hash|
+  array.each do |key, value|
     location_hash.each do |k, location|
       if !output.has_key?(location)
         school_hash[location] = [key]
