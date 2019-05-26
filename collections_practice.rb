@@ -63,7 +63,7 @@ def organize_schools(array)
   array.each do |key, value|
     value.each do |key2, place|
       if school_hash.has_key?(place)
-        school_hash[place] = [key]
+        school_hash[place] = key
       elsif school_hash.has_key?(place)
         school_hash[place] << key
       end
